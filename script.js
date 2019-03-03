@@ -21,6 +21,14 @@ var churchillSpeech = {
     userNamePrompt,
     favoriteSpeechPrompt;
 
+//Looping console log of speeches
+	i = 0;
+	while (i<speechesArray.length){
+		console.log("This speech is written by "+speechesArray[i].author)
+		i++;
+	};
+	
+
 document.getElementById('BtnDonate').addEventListener('click', function(){
   //Code in here executes when the user clicks the "Donate" button.
   favoriteSpeechPrompt = window.prompt('Which speech author is your favorite?');
