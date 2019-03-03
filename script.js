@@ -39,22 +39,31 @@ document.getElementById('BtnDonate').addEventListener('click', function(){
   }
 });
 
+//Variables for oldest and newest --- If the speech's year value is older, set the value of the oldest variable to the value of that speech's year.
+var oldestSpeech = speechesArray[0].year;
+var earliestSpeech = speechesArray[0].year;
+
+for(i=0; i<speechesArray.length; i++){
+	if(speechesArray[i].year > earliestSpeech){
+		var earliestSpeech = speechesArray[i].year
+	};
+};
+for(i=0; i<speechesArray.length; i++){
+	if(speechesArray[i].year < oldestSpeech){
+		var oldestSpeech = speechesArray[i].year
+	};
+};
+
+console.log("The oldest speech was written in " + oldestSpeech);
+console.log("The earliest speech was written in " + earliestSpeech);
+
+
+
 document.getElementById('BtnChurchill').addEventListener('click', function(){
   //Code in here executes when the user clicks the "Churchill" button.
-  console.log('This speech was written by ' + speechesArray[0].author + ' in ' + speechesArray[0].year);
-
-  if(speechesArray[0].yearIsBCE === true){
-    console.log('This speech took place before the common era.');
-  }else{
-    console.log('This speech took place during the common era.');
-  }
-
-  if(speechesArray[0].year < speechesArray[1].year && speechesArray[0].year < speechesArray[2].year){
-    console.log('This is the oldest speech on the page.');
-  }else if(speechesArray[0].year > speechesArray[1].year && speechesArray[0].year > speechesArray[2].year){
-    console.log('This is the most recent speech on the page.');
-  }
-});
+	if(speechesArray[0] === oldestSpeech){
+		console
+	}
 
 document.getElementById('BtnGhandi').addEventListener('click', function(){
   //Code in here executes when the user clicks the "Ghandi" button.
